@@ -1,6 +1,8 @@
 require 'byebug'
 
 require_relative "sign.rb"
+require_relative "student.rb"
+require_relative "company.rb"
 class LoginPage
 	$user_id = 0
 	$signup_user = []
@@ -14,24 +16,9 @@ class LoginPage
 		
 		registration_hash = { email: $user_name, password: $user_pwd , user_role: role } 
 		$signup_user.push(registration_hash) 
-		# $signup_user.select {|signup_user| signup_user[role] } 
-			# if role == 1
 				puts "#{role} signup successfully"
-			# elsif role == 2
-			# 	puts "student signup successfully"
-			# elsif role == 3
-			# 	puts "company signup successfully"
-			# else 
-			# 	puts "error"
-			# end
-		 # }
-		 puts $signup_user
-		# end
-
-		PanelPage.new.panel(role)
-
-		# puts "You have successfully signup yourself"
-
+				puts $signup_user
+				PanelPage.new.panel(role)
 	end
 
 	def login(role)
@@ -47,17 +34,18 @@ class LoginPage
 			$current_user = $user_hash 
 		else
 			puts "You entered something wrong please try again"
-		  PanelPage.new.panel
+		  PanelPage.new.panel(role)
 		end
-		# $login_user = {email: $login_email, password: $login_pwd ,}
-		# CurrentUser.new.current
-		
 	end
 	
 	def current_user
 		return $current_user
 	end
+
+	
 end
+
+
 
 
 class BackPanel
@@ -65,13 +53,6 @@ class BackPanel
 		PanelPage.new.start
 	end
 end
-
-class BackPage
-	def back_page
-		
-	end
-end
-
 
 class Logout
 	def log
@@ -81,14 +62,6 @@ class Logout
     end
 end
 
-# class CurrentUser
-		# $current_login = $signup_user
-		# $current_login1 = $login_user
-		# $current_role = $user_role
-		# if $current_login == $signup_user || $current_login1 == $login_user
-		# 	puts "You have successfully login"
-		# end
-# end
 
 
 

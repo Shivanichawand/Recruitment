@@ -20,15 +20,15 @@ class AdminPage
 		puts "1. Admin Profile"
 		puts "2. Check applied jobs list"
 		puts "3. Update profile"
-		puts "4. Change password"
-		puts "5. Check post jobs from company"
-		puts "6. Check company profile"
-		puts "7. Manage company "
-		puts "8. Manage interview"
+		# puts "4. Change password"
+		puts "4. Check post jobs from company"
+		puts "5. View company profile"
+		# puts "7. Manage company "
+		# puts "8. Manage interview"/
 
-		puts "9. Back"
-		puts "10. Back_to_PanelPage"
-		puts "11. Logout"
+		puts "6. Back"
+		# puts "10. Back_to_PanelPage"
+		puts "7. Logout"
 
 
 
@@ -42,11 +42,9 @@ class AdminPage
 			# 	Student.new.stud
 			# when 3
 			# 	Company.new.comp
-		when 9
+		when 6
 			PanelPage.new.panel
-		when 10
-			BackPanel.new.back_panel
-		when 11
+		when 7
 			Logout.new.log
 
 		end

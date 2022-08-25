@@ -8,9 +8,9 @@ require 'byebug'
 
 class PanelPage
 	def start
-		puts "1. Admin"
-		puts "2. Student"
-		puts "3. Company"
+		puts "1. Admin Panel"
+		puts "2. Student Panel"
+		puts "3. Company Panel"
 		puts "4. Exit"
 
 		print "Select your field : "
